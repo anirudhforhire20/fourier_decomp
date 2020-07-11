@@ -29,3 +29,5 @@ A prototype fourier transform library built from scratch. Before using please re
 -> This might need additional modules (for audio processing)
 
 This project is originally meant to be a fourier compression filter however that can only happen ater maxing out all the performances in the fourier transform and smapling algorithm
+
+-->This is my very first repository<--
