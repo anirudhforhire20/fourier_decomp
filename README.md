@@ -26,4 +26,6 @@ A prototype fourier transform library built from scratch. Before using please re
 
 -> The audio_processing file is the main file which can be run in terminal along with a single argument which is the file you want to analyze
 
+-> This might need additional modules (for audio processing)
+
 This project is originally meant to be a fourier compression filter however that can only happen ater maxing out all the performances in the fourier transform and smapling algorithm
