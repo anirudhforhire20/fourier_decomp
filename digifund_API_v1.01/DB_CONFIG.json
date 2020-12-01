@@ -1,0 +1,465 @@
+[
+    {   "name": "base_rate",
+        "params": ["date", "symbol", "rate", "is_final"],
+        "actions": [
+            {
+                "name": "append",
+                "query_code": 101,
+                "perms": [
+                    "ADMIN",
+                    "STAFF"
+                ]
+            },
+            {
+                "name": "edit",
+                "query_code": 102,
+                "perms": [
+                    "ADMIN",
+                    "STAFF"
+                ]
+            },
+            {
+                "name": "delete",
+                "query_code": 103,
+                "perms": [
+                    "ADMIN"
+                ]
+            },
+            {
+                "name": "read",
+                "query_code": 104,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB",
+                    "TRIAL"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "holidays",
+        "params": ["country", "date", "holiday_name"],
+        "actions": [
+            {
+                "name": "append",
+                "query_code": 201,
+                "perms": [
+                    "ADMIN",
+                    "STAFF"
+                ]
+            },
+            {
+                "name": "edit",
+                "query_code": 202,
+                "perms": [
+                    "ADMIN",
+                    "STAFF"
+                ]
+            },
+            {
+                "name": "delete",
+                "query_code": 203,
+                "perms": [
+                    "ADMIN"
+                ]
+            },
+            {
+                "name": "read",
+                "query_code": 204,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB",
+                    "TRIAL"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "instrument",
+        "params": ["_id", "name", "type", "day_count", "day_count_basis", "int_method", "lookback", "obs_shift", "rounding", "cas", "margin", "floor", "cap", "payment_freq", "deal_id", "symbol", "holiday_cal", "rate_pricing", "fixed_baserate"],
+        "actions": [
+            {
+                "name": "append",
+                "query_code": 301,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "edit",
+                "query_code": 302,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "delete",
+                "query_code": 303,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "read",
+                "query_code": 304,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB",
+                    "TRIAL"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "tranche",
+        "params": ["_id", "component", "payment_opt", "amount", "payment_freq", "rate_pricing", "instrument_id", "uni_tranche", "do_recalc"],
+        "actions": [
+           {
+                "name": "append",
+                "query_code": 401,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "edit",
+                "query_code": 402,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "delete",
+                "query_code": 403,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "read",
+                "query_code": 404,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB",
+                    "TRIAL"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "int_period",
+        "params": ["_id", "tranche_id", "start_date", "end_date", "cas", "margin", "floor", "cap"],
+        "actions": [
+            {
+                "name": "append",
+                "query_code": 501,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "edit",
+                "query_code": 502,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "delete",
+                "query_code": 503,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "read",
+                "query_code": 504,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB",
+                    "TRIAL"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "deal",
+        "params": ["_id", "name", "closing_date", "company_id"],
+        "actions": [
+            {
+                "name": "append",
+                "query_code": 601,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "edit",
+                "query_code": 602,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "delete",
+                "query_code": 603,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "read",
+                "query_code": 604,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB",
+                    "TRIAL"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "company",
+        "params": ["_id", "name", "user_id"],
+        "actions": [
+            {
+                "name": "append",
+                "query_code": 701,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "edit",
+                "query_code": 702,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "delete",
+                "query_code": 703,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "read",
+                "query_code": 704,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB",
+                    "TRIAL"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "benchmark",
+        "params": ["_id", "symbol", "name", "holiday_country", "decimals", "rec_day_count"],
+        "actions": [
+            {
+                "name": "append",
+                "query_code": 901,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "edit",
+                "query_code": 902,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "delete",
+                "query_code": 903,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "read",
+                "query_code": 904,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB",
+                    "TRIAL"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "results",
+        "params": ["_id", "index", "int_period_id", "principal_bal", "benchmark_date", "start_date", "end_date", "cal_days", "cum_int_days", "cal_days_obs", "cum_obs_days", "obs_start_date", "obs_end_date", "base_rate", "floor_rate", "cas", "floor", "cap", "margin", "eff_rfr", "comp_factor", "comp_rfr", "un_comp_rfr", "non_cum_rfr", "daily_all-in_rate", "earn_base_int", "earn_cas_int", "earn_margin_int", "earn_total_int", "cum_int_total"],
+        "actions": [
+            {
+                "name": "append",
+                "query_code": 111,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "edit",
+                "query_code": 112,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "delete",
+                "query_code": 113,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "read",
+                "query_code": 114,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB",
+                    "TRIAL"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "user",
+        "actions": [
+            {
+                "name": "append",
+                "query_code": 121,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "edit",
+                "query_code": 122,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "delete",
+                "query_code": 123,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "read",
+                "query_code": 124,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB",
+                    "TRIAL"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "transactions",
+        "params": ["date", "amount", "tranche_id"],
+        "actions": [
+            {
+                "name": "append",
+                "query_code": 131,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "edit",
+                "query_code": 132,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "delete",
+                "query_code": 133,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB"
+                ]
+            },
+            {
+                "name": "read",
+                "query_code": 134,
+                "perms": [
+                    "ADMIN",
+                    "STAFF",
+                    "SUB",
+                    "TRIAL"
+                ]
+            }
+        ]
+    }
+]

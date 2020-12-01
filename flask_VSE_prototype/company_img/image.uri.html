@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var canvas = document.createElement("canvas");
+        context = canvas.getContext('2d');
+
+make_base();
+
+function make_base()
+{
+  base_image = new Image();
+  base_image.src = 'abstract-cuboid-building-4519ld.png';
+  base_image.onload = function(){
+    context.drawImage(base_image, 100, 100);
+  }
+}
+ console.log(canvas.toDataURL());
+    </script>
+    <img id="data"/>
+    <script>
+        document.getElementById("data").src = canvas.toDataURL();
+    </script>
+</body>
+</html>
