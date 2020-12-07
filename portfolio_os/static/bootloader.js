@@ -2,12 +2,12 @@
 var bootScreen = document.getElementById('boot');
 
 setTimeout(function() {
-    var item = '<p><span class="text">bootloader initiated... </span></p><br>';
+    var item = '<p><span class="text">bootloader initiated... </span></p>';
     bootScreen.insertAdjacentHTML('beforeend', item);
 }, 1000);
 
 setTimeout(function() {
-    var item = '<p><span class="text">booting... </span></p><br><br>';
+    var item = '<p><span class="text">booting... </span></p><br>';
     bootScreen.insertAdjacentHTML('beforeend', item);
 }, 1100);
 
@@ -15,7 +15,7 @@ var p = document.createElement('p');
 setTimeout(function() {
     p.innerHTML = '<span class="text">systems check  </span>'
     bootScreen.insertAdjacentElement('beforeend', p);
-    bootScreen.insertAdjacentHTML('beforeend', '<br>');
+    //bootScreen.insertAdjacentHTML('beforeend', '<br>');
 }, 2200);
 
 setTimeout(function() {
@@ -44,7 +44,7 @@ setTimeout(function() {
 }, 3320);
 
 setTimeout(function() {
-    var item = '<p><span class="text">system </span></p><br><br>';
+    var item = '<p><span class="text">system </span></p><br>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 4322);
@@ -52,12 +52,12 @@ setTimeout(function() {
 setTimeout(function() {
     var item = '<span class="success">[OK]</span>';
     //console.log(bootScreen.children);
-    bootScreen.children[bootScreen.children.length - 3].insertAdjacentHTML('beforeend', item);
+    bootScreen.children[bootScreen.children.length - 2].insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 4392);
 
 setTimeout(function() {
-    var item = '<p><span class="text">status check noose./sda/disk.js   </span></p><br>';
+    var item = '<p><span class="text">status check noose./sda/disk.js   </span></p>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 4412);
@@ -69,7 +69,7 @@ setTimeout(function() {
 }, 4465);
 
 setTimeout(function() {
-    var item = ' <p><span class="text">status check noose./sda/filesystem.js   </span></p><br>';
+    var item = ' <p><span class="text">status check noose./sda/filesystem.js   </span></p>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 4522);
@@ -81,7 +81,7 @@ setTimeout(function() {
 }, 4592);
 
 setTimeout(function() {
-    var item = '<p><span class="text">status check noose./root/grub/terminal/terminal_mapper/noose/ns.interpreter/ns.schema.js   </span></p><br>';
+    var item = '<p><span class="text">status check noose./root/grub/terminal/terminal_mapper/noose/ns.interpreter/ns.schema.js   </span></p>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 5022);
@@ -93,7 +93,7 @@ setTimeout(function() {
 }, 5092);
 
 setTimeout(function() {
-    var item = '<p><span class="text">status check noose./root/grub/terminal/ns.parse/sequence.js   </span></p><br>';
+    var item = '<p><span class="text">status check noose./root/grub/terminal/ns.parse/sequence.js   </span></p>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 5152);
@@ -105,7 +105,7 @@ setTimeout(function() {
 }, 5192);
 
 setTimeout(function() {
-    var item = '<p><span class="text">status check noose./root/terminal.js   </spam></p><br>';
+    var item = '<p><span class="text">status check noose./root/terminal.js   </spam></p>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 5215);
@@ -117,7 +117,7 @@ setTimeout(function() {
 }, 5262);
 
 setTimeout(function() {
-    var item = '<p><span class="text">status check noose./root/finder.js   </span></p><br>';
+    var item = '<p><span class="text">status check noose./root/finder.js   </span></p>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 5352);
@@ -129,7 +129,7 @@ setTimeout(function() {
 }, 5392);
 
 setTimeout(function() {
-    var item = '<p><span class="text">status check noose./root/application.js   </span></p><br>';
+    var item = '<p><span class="text">status check noose./root/application.js   </span></p>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 5422);
@@ -141,7 +141,7 @@ setTimeout(function() {
 }, 5472);
 
 setTimeout(function() {
-    var item = '<p><span class="text">status check noose./root/browser.js   </span></p><br>';
+    var item = '<p><span class="text">status check noose./root/browser.js   </span></p>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 5499);
@@ -153,7 +153,7 @@ setTimeout(function() {
 }, 5550);
 
 setTimeout(function() {
-    var item = '<p><span class="text">status check noose./root/gui.js   </span></p><br>';
+    var item = '<p><span class="text">status check noose./root/gui.js   </span></p>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 5552);
@@ -165,7 +165,7 @@ setTimeout(function() {
 }, 5592);
 
 setTimeout(function() {
-    var item = '<p><span class="text">status check... </span></p><br><br>';
+    var item = '<p><span class="text">status check... </span></p><br>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 5629);
@@ -177,49 +177,49 @@ setTimeout(function() {
 }, 5690);
 
 setTimeout(function() {
-    var item = '<p><span class="text">loading files... </span></p><br>';
+    var item = '<p><span class="text">loading files... </span></p>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 5720);
 
 setTimeout(function() {
-    var item = '<p><span class="text">./root/home/feedback.log... </span><span class="success">[DONE]</span></p><br>';
+    var item = '<p><span class="text">./root/home/feedback.log... </span><span class="success">[DONE]</span></p>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 5750);
 
 setTimeout(function() {
-    var item = '<p><span class="text">./root/home/simulator.js... </span><span class="success">[DONE]</span></p><br>';
+    var item = '<p><span class="text">./root/home/simulator.js... </span><span class="success">[DONE]</span></p>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 5800);
 
 setTimeout(function() {
-    var item = '<p><span class="text">./root/home/vse.htm... </span><span class="success">[DONE]</span></p><br>';
+    var item = '<p><span class="text">./root/home/vse.htm... </span><span class="success">[DONE]</span></p>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 5850);
 
 setTimeout(function() {
-    var item = '<p><span class="text">./root/home/pyV.htm... </span><span class="success">[DONE]</span></p><br>';
+    var item = '<p><span class="text">./root/home/pyV.htm... </span><span class="success">[DONE]</span></p>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 5900);
 
 setTimeout(function() {
-    var item = '<p><span class="text">./root/home/resume.pdf... </span><span class="success">[DONE]</span></p><br><br>';
+    var item = '<p><span class="text">./root/home/resume.pdf... </span><span class="success">[DONE]</span></p><br>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 5950);
 
 setTimeout(function() {
-    var item = '<p><span class="error">[MALFUNCTION DETECTED]</span></p><br>';
+    var item = '<p><span class="error">[MALFUNCTION DETECTED]</span></p>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 6950);
 
 setTimeout(function() {
-    var item = '<p><span class="error">Error: </span><span class="text">spoiled memory 0xff82aa66d981ffe  </span><span class="error">[COMPROMISED]</span></p><br>';
+    var item = '<p><span class="error">Error: </span><span class="text">spoiled memory 0xff82aa66d981ffe  </span><span class="error">[COMPROMISED]</span></p>';
     bootScreen.insertAdjacentHTML('beforeend', item);
     //console.log(p);
 }, 7050);
@@ -291,7 +291,7 @@ setTimeout(function() {
     //bootScreen.children[bootScreen.children.length - 1].insertAdjacentHTML('beforeend', item);
     //console.log(p);
     bootScreen.innerHTML = item;
-}, 7450);
+}, 7430);
 
 setTimeout(function() {
     bootScreen.innerHTML = "";
@@ -378,7 +378,7 @@ setTimeout(function() {
     console.log("starting program");
     var icon1 = new icon("terminal", "Terminal");
     var icon2 = new icon("browser", "Browser");
-    var icon3 = new icon("textFile", "File1");
-    var icon4 = new icon("textEditor", "textEdit");
+    var icon4 = new icon("textEditor", "feedback.log");
     var icon5 = new icon("Finder", "Finder");
+    var icon3 = new icon("textFile", "do not open");
 },14000);

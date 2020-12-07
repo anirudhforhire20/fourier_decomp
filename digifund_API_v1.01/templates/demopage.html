@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body style="background-color: rgb(0, 0, 0);">
@@ -35,95 +38,95 @@
       <div class="row" style="height: 50vh; width: 100%; border: 0px; margin: 0px; padding: 0px;">
           <div class="col-2"></div>
           <div class="col-8" style="border: 2px solid grey; border-radius: 15px;">
-              <form style="border: 2px; padding: 2px; margin: 2px;">
+              <form name="calc_form" style="border: 2px; padding: 2px; margin: 2px;" id="form">
                 <h2 style="color: grey;">Interest Terms</h2>
                   <fieldset class="row" style="color: rgb(53, 161, 211); display: flex; align-items: flex-end;">
                       <div class="form-group col" style="margin: 0px; padding: 0px; border: 0px; text-align: center;">
                         <label for="rfr" class="form-control-label-sm">RFR Name</label>
-                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm">
-                            <option>SONIA</option>
-                            <option>SOFR</option>
+                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm" name="rfr_name">
+                            <option value="SONIA">SONIA</option>
+                            <option value="SOFR">SOFR</option>
                         </select>
                       </div>
 
                       <div class="form-group col" style="margin: 0px; padding: 0px; border: 0px; text-align: center;">
                         <label for="rfr" class="form-control-label-sm">Interest Method</label>
-                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm">
-                            <option>Compound</option>
-                            <option>Simple</option>
+                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm" name="int_method">
+                            <option value="Compound">Compound</option>
+                            <option value="SImple">Simple</option>
                         </select>
                       </div>
 
                       <div class="form-group col" style="margin: 0px; padding: 0px; border: 0px; text-align: center;">
                         <label for="rfr" class="form-control-label-sm">Banking Holiday</label>
-                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm">
-                            <option>UK</option>
-                            <option>US</option>
+                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm" name="holiday">
+                            <option value="UK">UK</option>
+                            <option value="US">US</option>
                         </select>
                       </div>
 
                       <div class="form-group col" style="margin: 0px; padding: 0px; border: 0px; text-align: center;">
                         <label for="rfr" class="form-control-label-sm">Observation Shift</label>
-                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm">
-                            <option>Without</option>
-                            <option>With</option>
+                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm" name="obs_shift">
+                            <option value="without">Without</option>
+                            <option value="with">With</option>
                         </select>
                       </div>
 
                       <div class="form-group col" style="margin: 0px; padding: 0px; border: 0px; text-align: center;">
                         <label for="rfr" class="form-control-label-sm">Lookback</label>
-                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm">
-                            <option>5</option>
-                            <option>6</option>
+                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm" name="lookback">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
                         </select>
                       </div>
 
                       <div class="form-group col" style="margin: 0px; padding: 0px; border: 0px; text-align: center;">
                         <label for="rfr" class="form-control-label-sm">Rounding</label>
-                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm">
-                            <option>5</option>
-                            <option>6</option>
+                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm" name="rounding">
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
                         </select>
                       </div>
 
                       <div class="form-group col" style="margin: 0px; padding: 0px; border: 0px; text-align: center;">
                         <label for="rfr" class="form-control-label-sm">Day Count</label>
-                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm">
-                            <option>5</option>
-                            <option>6</option>
+                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm" name="day_count">
+                            <option value="Act/360">Act/360</option>
+                            <option value="Act/365">Act/365</option>
                         </select>
                       </div>
 
                       <div class="form-group col" style="margin: 0px; padding: 0px; border: 0px; text-align: center;">
                         <label for="rfr" class="form-control-label-sm">Margin</label>
-                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm">
-                            <option>5</option>
-                            <option>6</option>
-                        </select>
+                        <input type="number" style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm" name="margin"/>
                       </div>
 
                       <div class="form-group col" style="margin: 0px; padding: 0px; border: 0px; text-align: center;">
                         <label for="rfr" class="form-control-label-sm">Cap</label>
-                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm">
-                            <option>5</option>
-                            <option>6</option>
-                        </select>
+                        <input type="number" style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm" name="cap"/>
                       </div>
 
                       <div class="form-group col" style="margin: 0px; padding: 0px; border: 0px; text-align: center;">
                         <label for="rfr" class="form-control-label-sm">CAS</label>
-                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm">
-                            <option>5</option>
-                            <option>6</option>
-                        </select>
+                        <input type="number" style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm" name="cas"/>
                       </div>
 
                       <div class="form-group col" style="margin: 0px; padding: 0px; border: 0px; text-align: center;">
                         <label for="rfr" class="form-control-label-sm">Floor</label>
-                        <select style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm">
-                            <option>5</option>
-                            <option>6</option>
-                        </select>
+                        <input type="number" style="margin: 0px; padding: 0px; border: 0px; width: 100%; border-radius: 0%;" class="form-control-sm" name="floor"/>
                       </div>
                   </fieldset>
                   <div style="border: 0px; padding: 0px; margin: 0px; width: 100%; height: 5vh;"></div>
@@ -132,7 +135,7 @@
                             <h4>Interest Period</h4>
                             <div class="form-group row">
                                 <label class="form-control-label-sm col">From</label>
-                                <input class="form-control-sm col" type="date" name="to_date"/>
+                                <input class="form-control-sm col" type="date" name="from_date"/>
                                 <div class="col"></div>
                             </div>
 
@@ -141,7 +144,7 @@
                                 <input class="form-control-sm col" type="date" name="to_date"/>
                                 <div class="col"></div>
                             </div>
-                            <button class="btn btn-warning">Calculate</button>
+                            <button id="submit-btn"type="button" class="btn btn-warning">Calculate</button>
                         </fieldset>
 
                         <fieldset class="col" style="color: rgb(53, 161, 211);">
@@ -150,23 +153,23 @@
                               <fieldset class="row">
                                 <div class="form-group col">
                                     <label class="form-control-label-sm">Date</label>
-                                    <input style="margin: 0px; padding: 0px; border: 0px; width: 100%;" class="form-control-sm" type="date" name="to_date"/>
+                                    <input style="margin: 0px; padding: 0px; border: 0px; width: 100%;" class="form-control-sm" type="date" name="tr_date1"/>
                                 </div>
 
                                 <div class="form-group col">
                                     <label class="form-control-label-sm">Amount</label>
-                                    <input style="margin: 0px; padding: 0px; border: 0px; width: 100%;" class="form-control-sm" type="date" name="to_date"/>
+                                    <input style="margin: 0px; padding: 0px; border: 0px; width: 100%;" class="form-control-sm" type="number" name="tr_amt1"/>
                                 </div>
                                 </fieldset>
                                 <fieldset class="row">
                                 <div class="form-group col">
                                     <label class="form-control-label-sm">Date</label>
-                                    <input style="margin: 0px; padding: 0px; border: 0px; width: 100%;" class="form-control-sm" type="date" name="to_date"/>
+                                    <input style="margin: 0px; padding: 0px; border: 0px; width: 100%;" class="form-control-sm" type="date" name="tr_date2"/>
                                 </div>
 
                                 <div class="form-group col">
                                     <label class="form-control-label-sm">Amount</label>
-                                    <input style="margin: 0px; padding: 0px; border: 0px; width: 100%;" class="form-control-sm" type="date" name="to_date"/>
+                                    <input style="margin: 0px; padding: 0px; border: 0px; width: 100%;" class="form-control-sm" type="number" name="tr_amt2"/>
                                 </div>
                                 </fieldset>
                             </fieldset>
@@ -180,9 +183,92 @@
                         </div>
                     </div>
                     <div style="width: auto; height: 5vh;"></div>-->
+                    <fieldset id="popup" style="position: absolute; width: 100%; height: 100%; background-color: white; top: 0px; left: 0px; transition: opacity 0.5s; opacity: 0; display: none;">
+                      <label class="form-control-label">Email address</label>
+                      <input class="form-control" type="email" name="email"/>
+                      <button type="button" id="popup-btn" class="btn btn-warning">Submit</button>
+                    </fieldset>
               </form>
           </div>
       </div>
       <div style="width: 100%; height: 30vh; border: 0px; padding: 0px; margin: 0px;"></div>
+      <script>
+        function popup()
+        {
+          document.getElementById("popup").style.display = "block";
+          setTimeout(function() {
+            document.getElementById("popup").style.opacity = "1";
+          }, 200);
+          document.getElementById("popup-btn").onclick = function() {
+            console.log("submit");
+            var form = new FormData(document.forms["calc_form"]);
+            var xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+              var response = JSON.parse(xhttp.responseText);
+              var T = '<table class="table">\
+    <thead>\
+      <tr>\
+        <th scope="col">#</th>\
+        <th scope="col">Start date</th>\
+        <th scope="col">End date</th>\
+        <th scope="col">Amount</th>\
+        <th scope="col">Benchmark date</th>\
+        <th scope="col">Interest days</th>\
+        <th scope="col">Cumulative days</th>\
+        <th scope="col">Observation days</th>\
+        <th scope="col">Cumulative obvervation days</th>\
+        <th scope="col">Observation start date</th>\
+        <th scope="col">Observation end date</th>\
+        <th scope="col">Base rate</th>\
+        <th scope="col">Floored rate</th>\
+        <th scope="col">CAS</th>\
+        <th scope="col">Floor</th>\
+        <th scope="col">Cap</th>\
+        <th scope="col">Margin</th>\
+        <th scope="col">Effective RFR</th>\
+        <th scope="col">Compounding factor</th>\
+        <th scope="col">Uncompounded RFR</th>\
+        <th scope="col">Noncumulative RFR</th>\
+        <th scope="col">Daily all-in rate</th>\
+        <th scope="col">Interest from base rate</th>\
+        <th scope="col">Interest from margin</th>\
+        <th scope="col">Total interest</th>\
+        <th scope="col">Cumulative total interest</th>\
+      </tr>\
+    </thead>\
+    <tbody id="tbody">\
+    </tbody>\
+  </table>';
+
+
+  document.body.insertAdjacentHTML('beforeend', T);
+  for(var r of response)
+  {
+    var p1 = '<tr>';
+      for(var i in r)
+      {
+        if(i == 0 ||i == 2)
+        {
+
+        }
+        else
+        {
+          p1 += '<td>' + r[i] + '</td>';
+        }
+      }
+      p1 += '</tr>';
+      document.getElementById('tbody').insertAdjacentHTML('beforeend', p1);
+  }
+
+}
+            xhttp.open('POST', '/trial/calc');
+            xhttp.setRequestHeader('Content-Type', 'application/json');
+            xhttp.send(form)
+          }
+        }
+        document.getElementById("submit-btn").onclick = function() {
+          popup();
+        }
+      </script>
 </body>
 </html>

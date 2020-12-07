@@ -107,6 +107,10 @@
     /*white-space: pre-wrap;*/
 }
 
+.cli * {
+    position: relative;
+}
+
 .cli .success {
     position: relative;
     color: rgb(0, 202, 0);
@@ -189,6 +193,10 @@
     margin: 0px;
     overflow-x: hidden;
     overflow-y: scroll;
+}
+
+.web-area * {
+    position: relative;
 }
 
 .text-editor {

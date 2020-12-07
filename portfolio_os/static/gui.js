@@ -43,7 +43,7 @@ class icon {
             icon.setAttribute('id', "icon-" + (homescreen.icons.length + 1).toString());
             icon.setAttribute('class', 'icon');
             document.getElementById("homescreen").appendChild(icon);
-            console.log(icon.style.left, icon.style.top);
+            //console.log(icon.style.left, icon.style.top);
             homescreen.icons.push(icon);
         }
         icon.addEventListener('pointerenter', function() {
@@ -92,7 +92,7 @@ class icon {
                     }
                     else if(i.type == "textFile")
                     {
-                        var t = new textFile(i);
+                        var t = new textFile(i, i.name);
                         i.window = t;
                     }
                     else if(i.type == "textEditor")
@@ -179,6 +179,7 @@ class Wndw {
         btng.appendChild(btnhd);
         btng.appendChild(btnmx);
         nav.appendChild(btng);
+        i.btnex = btnex;
         window.appendChild(nav);
         this.window = window;
         if(homescreen.windows.length != 0)
@@ -325,6 +326,8 @@ class Wndw {
 };
 
 class Terminal extends Wndw {
+    user = 'noose.root.user1';
+    dir = '~/';
     Interpreter = null;
     focused = false;
     location = null;
@@ -336,8 +339,8 @@ class Terminal extends Wndw {
         //this.window.w = this.getW;
         var html = '<div style="width: 100%; height: 10px; border: 0px; padding: 0px; margin: 0px; position: relative;"></div>\
         <div class="cli">\
-            <p tabindex="0"><span class="success">root38467.user:</span>\
-                <span class="directory">directory/subdirectory<span class="text">$</span></span>\
+            <p tabindex="0"><span class="success">' + i.user +':</span>\
+                <span class="directory">' + i.dir + '<span class="text">$</span></span>\
                 <span class="text"></span><span class="buffer-bar">||</span>\
             </p>\
         </div>';
@@ -349,7 +352,7 @@ class Terminal extends Wndw {
                 //console.log("setting");
                 i.window.children[i.window.children.length - 1].children[i.window.children[i.window.children.length - 1].children.length - 1].focus();
                 i.focused = true;
-                console.log(i.window.children[i.window.children.length - 1].children[i.window.children[i.window.children.length - 1].children.length - 1]);
+                //console.log(i.window.children[i.window.children.length - 1].children[i.window.children[i.window.children.length - 1].children.length - 1]);
             }
         });
 
@@ -359,7 +362,7 @@ class Terminal extends Wndw {
                 //console.log("setting");
                 i.window.children[i.window.children.length - 1].children[i.window.children[i.window.children.length - 1].children.length - 1].focus();
                 i.focused = true;
-                console.log(i.window.children[i.window.children.length - 1].children[i.window.children[i.window.children.length - 1].children.length - 1]);
+                //console.log(i.window.children[i.window.children.length - 1].children[i.window.children[i.window.children.length - 1].children.length - 1]);
             }
         });
 
@@ -374,11 +377,11 @@ class Terminal extends Wndw {
             }
         }*/
         i.window.children[i.window.children.length - 1].children[i.window.children[i.window.children.length - 1].children.length - 1].addEventListener('focus', function() {
-            console.log("focus");
+            //console.log("focus");
             //i.focused = false;
         });
         i.window.children[i.window.children.length - 1].children[i.window.children[i.window.children.length - 1].children.length - 1].addEventListener('keydown', function(event) {
-            console.log(i.window.children[i.window.children.length - 1].children[i.window.children[i.window.children.length - 1].children.length - 1]);
+            //console.log(i.window.children[i.window.children.length - 1].children[i.window.children[i.window.children.length - 1].children.length - 1]);
             if(i.focused == true)
             {
                 //console.log("writing");
@@ -398,11 +401,16 @@ class Terminal extends Wndw {
                     //console.log(i.window.children[i.window.children.length - 1].children[0])
                     i.Interpreter.input(cli.children[2].innerText);
                     i.Interpreter.interpret();
+                    i.Interpreter.execute();
                     i.window.children[i.window.children.length - 1].children[i.window.children[i.window.children.length - 1].children.length - 1].focus();
                 }
-                else
+                else if(["Escape", "Tab", "CapsLock", "Shift", "Control", "Alt", "ArrowUp", "ArrowRight", "ArrowLeft", "ArrowDown", "Delete"].includes(key))
                 {
-                    console.log(cli.children[2], cli);
+                    
+                }
+                else if(/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.\/?~0-9a-zA-Z]/.test(key))
+                {
+                    //console.log(cli.children[2], cli);
                     cli.children[2].insertAdjacentText('beforeend', key);
                 }
             }
@@ -413,7 +421,7 @@ class Terminal extends Wndw {
     {
         const i = this;
         var cli = i.window.children[i.window.children.length - 1].children[i.window.children[i.window.children.length - 1].children.length - 1];
-        console.log(cli);
+        //console.log(cli);
         //i.window.children[i.window.children.length - 1].innerHTML = "";
         var buffer_clone =  cli.children[3].cloneNode(true);
         cli.children[3].remove();
@@ -423,6 +431,8 @@ class Terminal extends Wndw {
         var prev = '<p class="text">' + cli.innerText + '</p>';
         cli.children[2].innerHTML = "";
         cli.appendChild(buffer_clone);
+        cli.children[0].innerHTML = i.user + ":";
+        cli.children[1].innerHTML = '<span class="directory">' + i.dir + '<span class="text">$</span></span>';
         i.window.children[i.window.children.length - 1].insertAdjacentHTML('beforeend', prev);
         i.window.children[i.window.children.length - 1].insertAdjacentHTML('beforeend', logstring);
         //i.window.children[i.window.children.length - 1].insertAdjacentHTML('beforeend', '<br>');

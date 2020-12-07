@@ -4,6 +4,7 @@ from flask import request, session, jsonify, send_file
 from flaskapp import app
 from api_db_functions import db_routine
 from api_calc import result_calc
+from db import dbcursor, db
 
 
 @app.route('/api/auth', methods=["POST"])

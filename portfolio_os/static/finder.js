@@ -13,22 +13,24 @@ class Finder extends Wndw {
     <div class="finder-window">\
         <div class="navigator"></div>\
         <div class="finder">\
-            <ul class="list">\
-            </ul>\
+            <div class="list">\
+            </div>\
         </div>\
     </div>';
         i.window.insertAdjacentHTML('beforeend', fhtml);
         var finder_win = i.window.children[i.window.children.length - 1]
         var finder = finder_win.children[1].children[0];
+        i.loc = {};
         function disp_list(path_list)
         {
-            console.log("clearing buffer");
+            //console.log("clearing buffer");
             finder.innerHTML = "";
-            for(var i in path_list)
+            //console.log(path_list);
+            for(var j in path_list)
             {
-                var path = path_list[i];
-                console.log(path);
-                var item = document.createElement('li')
+                var path = path_list[j];
+                //console.log(path);
+                var item = document.createElement('div')
                 item.style.position = "relative";
                 if(path.type == "directory")
                 {
@@ -51,6 +53,7 @@ class Finder extends Wndw {
                 else
                 {
                     var img = document.createElement('img');
+                    img.id = path.contents;
                     img.src = iconIMG['textFile'];
                     img.style.position = "relative";
                     img.setAttribute('class', 'icon');
@@ -61,18 +64,26 @@ class Finder extends Wndw {
                     //n.style.fontWeight = "100px";
                     n.style.position = "relative";
                     n.innerHTML = path.name;
+                    console.log(path.contents);
                     item.appendChild(n);
-                    item.onclick = function() {
+                    //var wn = new textFile(null, path.contents);
+                    //homescreen.windows.push(wn.windows);
+                    img.onclick = function() {
+                        const img = this;
                         setTimeout(function() {
-                            console.log("file clicked");
-                            var wn = new textFile(null);
+                            //console.log(img);
+                            //console.log(loc);
+                            var wn = new textFile(null, img.id);
                             homescreen.windows.push(wn.windows);
                         },100);
                     }
                 }
-                finder.appendChild(item);    
+                //console.log(item);
+                finder.appendChild(item);   
+                //finder.focus(); 
             }
         }
-        disp_list(disk.contents);
+        //console.log(disk[].contents);
+        disp_list(disk);
     }
 }
